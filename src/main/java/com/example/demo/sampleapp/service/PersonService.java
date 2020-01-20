@@ -1,6 +1,8 @@
 package com.example.demo.sampleapp.service;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.UUID;
 
 import com.example.demo.sampleapp.dao.PersonDao;
 import com.example.demo.sampleapp.model.Person;
@@ -25,5 +27,9 @@ public class PersonService{
 
     public List<Person> getAllPeople(){
         return personDao.selectAllPerson();
+    }
+
+    public Optional<Person> getPersonById(UUID id){
+        return personDao.selectPersonByID(id);
     }
 }
